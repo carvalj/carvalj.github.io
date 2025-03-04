@@ -19,15 +19,15 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Your awesome title
-email: your-email@example.com
+email: blog@carvalj.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Excerpts from my lifelong journey throught the weird and wonderful world of computer architecture and mathematics. 
+  Think of this place as curated journal entries of a lifetimes of problem solving. Most problems you run into are quite 
+  uninteresting. But some leave a mark. This website is a collection of such times where a problem left a mark on me.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "https://carvalj.com" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: NULL # 
+github_username:  carvalj
 
 # Build settings
 theme: minima
