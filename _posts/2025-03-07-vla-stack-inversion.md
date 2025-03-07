@@ -366,9 +366,27 @@ carvalj@earth:/mnt/shared/exploring/vla_bad$
 
 Think about what just happenned above: On one hand, it seems like dummy[0] is 0. On the other hand, that would mean the line printf("what the...") is unreachable. And yet, here we are. Further, it lookks like we also skipped the line printf("dummy[0] = %d", dummy[0]);
 
-In other words, we just made a very *very* shitty filed scoped goto statement. Yes, I will be going to hell for this.
+In other words, we just made a very *very* shitty filed scoped goto statement. 
 
+As a parting gift, I have one final monstrosity to share: A one line c file, with no gotos or loops, that calculates the first n fibonnaci numbers.
 
-*Ps: if you are curious, the program does hang if we dont have the evil memory hack line. It behaves exactly like the code with a printf call did before.*
+```c
+long a=1,d=1,f=1,w=0,m=0;void h(){}int main(int x,char**y){m=m?m:atoi(y[1]);d=1;long b=a;a=-1;long e[a];a=b;h();if(d)e[9]=e[-1];if(f<0||m<=w)exit(0);printf("%ld\n",a);d=f;f=f+a;a=d;d=0;w++;return x;}
+```
+``` 
+carvalj@earth:/mnt/shared/exploring/vla_bad$ gcc -include stdio.h -include stdlib.h fib.c 
+carvalj@earth:/mnt/shared/exploring/vla_bad$ gcc ./a.out 10
+1
+1
+2
+3
+5
+8
+13
+21
+34
+55
+carvalj@earth:/mnt/shared/exploring/vla_bad$ 
+```
 
 
