@@ -410,7 +410,7 @@ int main(int argc, char** argv)
 }
 ```
 ``` 
-carvalj@earth:/mnt/shared/exploring/vla_bad$ gcc -include stdio.h -include stdlib.h fib.c 
+carvalj@earth:/mnt/shared/exploring/vla_bad$ gcc fib.c 
 carvalj@earth:/mnt/shared/exploring/vla_bad$ gcc ./a.out 10
 1
 1
