@@ -368,10 +368,46 @@ Think about what just happenned above: On one hand, it seems like dummy[0] is 0.
 
 In other words, we just made a very *very* shitty filed scoped goto statement. 
 
-As a parting gift, I have one final monstrosity to share: A one line c file, with no gotos or loops, that calculates the first n fibonnaci numbers.
+And like any good mad scientist, once we find a new trick, there is only one reasonable response: We make a proof of concept demonstrating everything we know about it. Putting everything we learned so far together, I came up with what is likely to be one of the more cursed ways of computing the first n fibonnaci numbers. 
 
-```c
-long a=1,d=1,f=1,w=0,m=0;void h(){}int main(int x,char**y){m=m?m:atoi(y[1]);d=1;long b=a;a=-1;long e[a];a=b;h();if(d)e[9]=e[-1];if(f<0||m<=w)exit(0);printf("%ld\n",a);d=f;f=f+a;a=d;d=0;w++;return x;}
+```c 
+#include <stdio.h>
+#include <stdlib.h>
+
+// globals are bad code standard, but honestly, 
+// that is the least of your concerns with this code.
+// (also, as you will see, we cant trust locals in this code)
+long curr_fib=1,d=1,next_fib=1,counter=0,last_fib=0; 
+
+void goblin(){}
+
+int main(int argc, char** argv)
+{
+	last_fib = last_fib ? last_fib : atoi(argv[1]); //a is for atoi
+	d=1; //flag / temporary var, dont worry
+	long b = curr_fib; 
+	curr_fib = -1; 
+	long e[curr_fib]; // dont worry about it
+	curr_fib = b;
+
+	goblin(); // :)
+		  
+	if(d) e[9] = e[-1]; //evil memory trick
+
+	//exits if reached the requested fib number
+	// or if next_fib overflew into negatives.
+	if(next_fib < 0 || last_fib <= counter) exit(0);
+	printf("%ld\n", curr_fib);
+
+	// standard fibonnaci stuff
+	d = next_fib;
+	next_fib = next_fib + curr_fib;
+	curr_fib = d;
+	d = 0;
+	counter++;
+
+	return argc; // =)
+}
 ```
 ``` 
 carvalj@earth:/mnt/shared/exploring/vla_bad$ gcc -include stdio.h -include stdlib.h fib.c 
@@ -389,4 +425,4 @@ carvalj@earth:/mnt/shared/exploring/vla_bad$ gcc ./a.out 10
 carvalj@earth:/mnt/shared/exploring/vla_bad$ 
 ```
 
-
+*Ps: This will only run in x86_64 linux. I have however, tested it under QEMU and it runs, so feel free to run it with QEMU for yourself. In particular, try removing the "useless function call" and seeing what happens.*
