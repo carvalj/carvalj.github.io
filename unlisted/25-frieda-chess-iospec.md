@@ -53,7 +53,7 @@ A instance of `<move>` is valid AND describes a move allowed by the chess rules 
 
 ## \<time\> - specifications
 
-The symbol `<time>` shall always be the base 10 representation of a integer $0 \leq t \leq 1000$.
+The symbol `<time>` shall always be the base 10 representation of a integer \\(0 \leq t \leq 1000\\).
 
 ## \<status\> - specifications
 

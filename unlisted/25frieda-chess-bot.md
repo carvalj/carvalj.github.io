@@ -13,4 +13,5 @@ This page is always guaranteed to contain the most up to date information / reso
 - [Program I/O specification]({% link unlisted/25-frieda-chess-iospec.md %})
 
 ## All announcements (chronologically)
+- [(March 10, 2025) Useful links for chess programming]({% link unlisted/25frieda-chess-misc1.md %})
 - [(March 9, 2025) Program I/O specification v1]({% link unlisted/25-frieda-chess-iospec.md %})
