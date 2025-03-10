@@ -3,6 +3,7 @@ layout: page
 title: "2025 Frieda Chess Bot Competition - I/O spec"
 permalink: /unlisted/25-frieda-chess-comp-io-spec
 tags: ["25-frieda-chess-comp","iospec"]
+description: " "
 ---
 
 - [Return to competition main page]({% link unlisted/25frieda-chess-bot.md %})
